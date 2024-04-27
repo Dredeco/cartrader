@@ -5,8 +5,5 @@
 </script>
 
 <template>
-    <div class="mt-32 flex">
-        <CarSidebar />
-        <CarCards />
-    </div>
+    <CarCards />
 </template>

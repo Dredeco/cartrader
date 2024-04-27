@@ -1,12 +1,5 @@
 <script setup>
-    const route = useRoute();
-    const {toTitleCase} = useUtilities();
-    
-    const cars = await useCars();
-
-    useHead({
-        title: toTitleCase(route.params.city)
-    });
+    const { cars } = await useCars();
 </script>
 
 <template>

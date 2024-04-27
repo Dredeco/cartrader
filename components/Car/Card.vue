@@ -2,26 +2,24 @@
     const props = defineProps({
         car: Object,
     })
-
-    console.log(props)
 </script>
 
 <template>
     <div class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]">
-        <div class="flex h-full">
+        <div class="flex h-full" @click="navigateTo(`/car/${car.name.split(' ')[0]}-${car.id}`)">
             <img 
             class="w-[300px] h-full"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThbYSy9DEWOh_avY5OUMeZn6D0D0RhaZWbglI2H0ji7A&s" 
+            :src="car.url"
             alt="" />
 
             <div class="p-4 flex flex-col">
                 <div>
                     <h1 class="text-2xl text-blue-700">
-                    {{ car.model }}
+                    {{ car.name }}
                     </h1>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quidem autem dolor culpa omnis atque fugiat placeat optio, eaque quasi numquam voluptatibus ad. Quia ad labore quasi, nesciunt necessitatibus sit!</p>
+                    <p class="text-gray-700">{{ car.description }}</p>
                 </div>
-                <h1 class="mt-auto text-xl">$39,555</h1>
+                <h1 class="mt-auto text-xl">$ {{ car.price }}</h1>
             </div>
         </div>
     </div>
